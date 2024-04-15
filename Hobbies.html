@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="script.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Martin Kirsch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <div class="container my-5">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="education.html">Education</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="experience.html">Experience</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="volunteer.html">Volunteer Work</a>
+                  </li>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="Hobbies.html">Hobbies</a>
+                </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+
+  </head>
+  <body>
+    
+          <h1> Hobbies</h1>
+    <p>This is an interactive page that can be changed depending on what type of Hobbie you enjoy.</p>
+
+    <form> 
+        Select a hobby to change the website theme:
+        <select id="Hobbies-background" onchange="musicSelector(this)">
+        <option value="Hunting">Hunting</option>
+        <option value="Fishing">Fishing</option>
+        <option value="Basketball">Basketball</option>
+        <option value="Football">Football</option>
+        
+        </select>
+    </form>
+
+    <hr> 
+
+    <h2 id="Hobbies-title">Hunting</h2>
+    <p id="Hobbies-description">I love to hunt deer, rabbits, squirrel, and pheasants. I enjoy the peace of being in nature, and enjoy the beautiful scenery. </p>
+    <figure>
+        <img width="500" id="Hunting-image" src="hunting.png"/>
+        <figcaption id="hunting-image-caption ">Photo by <a href="Photo by <a href="https://unsplash.com/@fredrikohlander?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Fredrik Öhlander</a> </figcaption>
+    </figure>
+
+
+
+    <script>
+        function HobbieSelector(selectElm) {
+            var i = selectElm.selectIndex;
+            if (i < 0) {
+                return;
+            }
+
+            var optionValue = selectElem.options[i].value;
+
+            if (optionValue === "Hunting") {
+                document.getElementById("Hobbies-title").innerHTML = "Hunting";
+                document.getElementById("Hobbies-description").innerHTML = "I love to hunt deer, rabbits, squirrel, and pheasants. I enjoy the peace of being in nature, and enjoy the beautiful scenery.";
+            }
+            else if (optionValue === "Fishing") {
+                document.getElementById("Hobbies-title").innerHTML = "Fishing";
+                document.getElementById("Hobbies-description").innerHTML ="I enjoy fishing as it is a relaxing hobby and I enjoy spending time in the woods, as well as the challenge to reel one in.";
+            }
+
+            else if (optionValue === "Basketball") {
+                document.getElementById("Hobbies-title").innerHTML = "Basketball";
+                document.getElementById("Hobbies-description").innerHTML = "I often play basketball for fun and exercize, its a great sport that I enjoy playing with friends and family.";
+            }
+
+            else if (optionValue === "Football") {
+                document.getElementById("Hobbies-title").innerHTML = "Football";
+                document.getElementById("Hobbies-description").innerHTML = "I enjoy watching football on the weekends in the fall and winter. I am a huge Penn State fan, as well as a Steeelers fan.";
+            }
+            else {
+                document.write("Something went wrong.Please Refresh.");
+            }
+        }
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+      </body>
+    </html> 

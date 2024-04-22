@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="script.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Martin Kirsch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <div class="container my-5">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="education.html">Education</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="experience.html">Experience</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="volunteer.html">Hobbies</a>
+                    </li>
+                
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+
+  </head>
+  <body>
+    <h1>Hobbies</h1>
+    <p>This is an interactive webpage that changes the content based on the hobby that is selected.</p>
+
+    <form>
+        Select a hobby to change the website theme:
+
+        <select id="background" onchange="hobbiesSelector(this)">
+            <option value="Hunting">Hunting</option>
+            <option value="Fishing">Fishing</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Football">Football</option>
+        </select>
+
+    </form>
+
+    <hr>
+
+    <h2 id="hobbies-title">Hunting</h2>
+
+    <p id="hobbies-description">Hunting is one of my favorite avtivities. It brings me peace to be in nature and enjoy the scenery, and the thrill of hunting feels amazing</p>
+
+    <figure>
+        <img width="500" id="hobbies-image" alt="Hobbies" src="hunting1.png" />
+        <figcaption id="hobbies-image-caption">'Photo by <a href="https://unsplash.com/@debrupas?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Pascal Debrunner</a> on <a href="https://unsplash.com/photos/a-ladder-in-the-middle-of-a-forest-PZoMDIOKPPQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash </a>'</figcaption>
+    </figure>
+
+    <script>
+
+        function hobbiesSelector(selectElem) {
+            var i = selectElem.selectedIndex;
+            if (i < 0) {
+                return;
+            }
+
+            var optionValue = selectElem.options[i].value;
+
+            // This option resets the values for spring if someone wants to go back.  
+
+            if (optionValue === "Hunting") {
+                document.body.style.backgroundColor ="Orange";
+                document.getElementById("hobbies-title").innerHTML = "Hunting";
+                document.getElementById("hobbies-description").innerHTML = "Hunting is one of my favorite avtivities. It brings me peace to be in nature and enjoy the scenery, and the thrill of hunting feels amazing.";
+                document.getElementById("hobbies-image").src="../projects/hunting1.png"
+                document.getElementById("hobbies-image-caption").innerHTML = 'Photo by <a href="https://unsplash.com/@mitchel3uo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mitchell Luo</a> on <a href="https://unsplash.com/s/photos/spring?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+            }
+
+            else if (optionValue === "Fishing") {
+                document.body.style.backgroundColor = "lightblue";
+                document.getElementById("hobbies-title").innerHTML = "Fishing";
+                document.getElementById("hobbies-description").innerHTML = "Fishing has a special meaning to me as I have been doing it since I can remember with my dad and grandad. The peace of nature and calmness of fishing is unrivaled to any.";
+                document.getElementById("hobbies-image").src="../projects/fishing.png"
+                document.getElementById("hobbies-image-caption").innerHTML = 'Photo by <a href="https://unsplash.com/@souvenirpixels?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"> James Wheeler </a> on <a href="https://unsplash.com/photos/black-fishing-rod-and-body-of-water-during-golden-hour-HJhGcU_IbsQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>';
+  
+            }
+
+            else if (optionValue === "Basketball") {
+                document.body.style.backgroundColor = "lightgreen";
+                document.getElementById("hobbies-title").innerHTML = "Basketball";
+                document.getElementById("hobbies-description").innerHTML = "I enjoy playing basketball with my friends or family for fun. It has always been a favorite sport if mine, and as a bonus it is great exercize.";
+                document.getElementById("hobbies-image").src="../projects/basketball.png"
+                document.getElementById("hobbies-image-caption").innerHTML = 'Photo by <a href="https://unsplash.com/@markusspiske?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Markus Spiske</a> on <a href="https://unsplash.com/photos/ball-under-basketball-ring-BfphcCvhl6E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>';
+           }
+
+            else if (optionValue === "Football") {
+                document.body.style.backgroundColor = "brown";
+                document.getElementById("hobbies-title").innerHTML = "Football";
+                document.getElementById("hobbies-description").innerHTML = "I have always been a huge football fan, I am an avid Penn State and Steelers fan. On top of watching football I also enjoy occassionally playing.";
+                document.getElementById("hobbies-image").src="../projects/football.png"
+                document.getElementById("hobbies-image-caption").innerHTML = 'Photo by <a href="https://unsplash.com/@aussiedave?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dave Adamson</a> on <a href="https://unsplash.com/photos/brown-and-black-wilson-football--nATH0CrkMU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>';}
+  
+
+            // This is important to have because it will let you know if you have an error anywhere in your code.
+
+            else {
+                document.write("Something went wrong. Please refresh the page.");
+            }
+        }
+
+    </script>
+
+  
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+      </body>
+    </html> 

@@ -1,5 +1,6 @@
 body{color:aliceblue; background-color: rgb(196, 65, 42);}
 h1 {font-size: 110px; text-align: center ; font-family:"Brush Script MT", cursive;}
+h2 {font-size: 40px; text-align: center ; font-family:"sans", cursive;}
 p {font-size: 20px; text-align: center; font-family: 'Times New Roman', Times, serif;}
 .topnav {
     background-color: #333;
@@ -27,3 +28,4 @@ p {font-size: 20px; text-align: center; font-family: 'Times New Roman', Times, s
     color: white;
   }
 body{border-style:dotted; border-color: black; border-width: 14px;}
+
